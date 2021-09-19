@@ -129,6 +129,10 @@
     &-controls {
       img:not(:last-child) {
         margin-right: 1rem;
+
+        @media only screen and (min-width: 320px) and (max-device-width: 600px) {
+          margin-bottom: 10px;
+        }
       }
     }
 
