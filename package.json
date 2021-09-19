@@ -7,18 +7,20 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "next export"
+    "export": "next export",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/ashfaqrafi/zaynax-task"
   },
   "author": "Ashfaq Mahmood",
   "license": "MIT",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/ashfaqrafi/zaynax-task"
   },
-  "homepage": "",
+  "homepage": "https://ashfaqrafi.github.io/zaynax-task",
   "dependencies": {
     "@reach/accordion": "^0.16.1",
     "babel-preset-next": "^1.4.0",
