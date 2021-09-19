@@ -1,8 +1,14 @@
 export const data = {
-  data: [
+  branding: {
+    brand1: "Nike",
+    supplier1: "Nike",
+    image1: "/static/images/Daco_24564.png",
+    brand2: "SPA MASTER Molecular",
+    supplier2: "zDrop",
+    image2: "/static/images/kliou.png",
+  },
+  data1: [
     {
-      brand: "Nike",
-      supplier: "Nike",
       name: "Men Striped Casual Spread Shirt Super Skinny Fit Low",
       color: "Red",
       size: "XL",
@@ -13,9 +19,7 @@ export const data = {
       image: "/static/images/shirt.png",
     },
     {
-      brand: "Nike",
-      supplier: "Nike",
-      name: "Men Striped Casual Spread Shirt Super Skinny Fit Low Men Striped Casual Spread Shirt Super Skinny Fit Low",
+      name: "Polo T-Shirt for men",
       color: "Red",
       size: "XL",
       quantity: 1,
@@ -24,15 +28,15 @@ export const data = {
       off: 25,
       image: "/static/images/image 21.png",
     },
+  ],
+  data2: [
     {
-      brand: "SPA MASTER Molecular",
-      supplier: "zDrop",
       name: "Double door refridgerator",
-      color: "Red",
-      size: "XL",
+      color: "Gray",
+      size: "30L",
       quantity: 1,
-      discount_price: 2850,
-      price: 3050,
+      discount_price: 22850,
+      price: 30050,
       off: 25,
       image: "/static/images/fridge.png",
     },
@@ -40,7 +44,7 @@ export const data = {
   metadata: {
     delivery_fee: 40,
     delivery_date: "27 January",
-    total_item: 2,
+    total_item: 3,
     shipping_charge: 600,
     discount: 0,
   },

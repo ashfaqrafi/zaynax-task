@@ -35,21 +35,14 @@ const SubHeader = styled.div`
   padding: 1rem;
 `;
 
-const orderData =
-  typeof window !== "undefined"
-    ? localStorage.setItem("data", JSON.stringify(data))
-    : null;
-
-console.log({ orderData });
+typeof window !== "undefined"
+  ? localStorage.setItem("data", JSON.stringify(data))
+  : null;
 
 const getOrderData =
   typeof window !== "undefined" ? localStorage.getItem("data") : null;
 
 const finalData = JSON.parse(getOrderData);
-
-console.log({ getOrderData });
-
-console.log({ finalData });
 
 const index: FC = () => (
   <>
@@ -103,7 +96,7 @@ const index: FC = () => (
               <span>YOUR SHOPPING CART</span>
             </div>
             <div className="cart__sub-text">
-              <span>2 item(s)</span>{" "}
+              <span>{finalData?.metadata?.total_item} item(s)</span>{" "}
               <span className="secondary-color">
                 <a href="#">Add more</a>
               </span>

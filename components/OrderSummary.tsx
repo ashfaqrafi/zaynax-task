@@ -10,9 +10,32 @@ import "@reach/accordion/styles.css";
 export const OrderSummary = ({
   getOrderData,
 }: {
-  getOrderData: {};
+  getOrderData: any;
 }): JSX.Element => {
-  console.log({ getOrderData });
+  const data1OrderQuantity =
+    getOrderData && getOrderData?.data1.map((item: any) => item.quantity);
+  const data1OrderAmount =
+    getOrderData && getOrderData?.data1.map((item: any) => item.discount_price);
+
+  const data2OrderQuantity =
+    getOrderData && getOrderData?.data2.map((item: any) => item.quantity);
+  const data2OrderAmount =
+    getOrderData && getOrderData?.data2.map((item: any) => item.discount_price);
+
+  const totalAmount =
+    (data1OrderQuantity &&
+      data1OrderQuantity.reduce(
+        (sum: number, val: number, i: number) =>
+          sum + val * data1OrderAmount[i],
+        0
+      )) +
+    (data2OrderQuantity &&
+      data2OrderQuantity.reduce(
+        (sum: number, val: number, i: number) =>
+          sum + val * data2OrderAmount[i],
+        0
+      ));
+
   return (
     <div className="orders__wrapper order-summary">
       <div className="orders__card">
@@ -22,16 +45,16 @@ export const OrderSummary = ({
         <div className="orders__card-body">
           <div className="orders__delivery  p-1">
             <div className="flex justify-between mb-1">
-              <div>Subtotal (20 Items)</div>
-              <div>৳ 38,850</div>
+              <div>Subtotal ({getOrderData?.metadata?.total_item} Items)</div>
+              <div>৳ {totalAmount}</div>
             </div>
             <div className="flex justify-between mb-1">
               <div>Discount</div>
-              <div>৳ 0</div>
+              <div>৳ {getOrderData?.metadata?.discount}</div>
             </div>
             <div className="flex justify-between">
               <div>Shipping Charge</div>
-              <div>৳ 600</div>
+              <div>৳ {getOrderData?.metadata?.shipping_charge}</div>
             </div>
           </div>
           <div className="order-summary__accordion  p-1">
@@ -72,7 +95,9 @@ export const OrderSummary = ({
                 <b>Total Payable</b>
               </div>
               <div>
-                <b>৳ 39,375</b>
+                <b>
+                  ৳ {totalAmount + getOrderData?.metadata?.shipping_charge}{" "}
+                </b>
               </div>
             </div>
           </div>

@@ -6,11 +6,6 @@ body {
   height: 100vh;
   background: #fafafa;
   font-family: "Questrial", sans-serif;
-  /* text-align: center; */
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
-  /* justify-content: center; */
 }
 
 a {
@@ -44,6 +39,10 @@ img {
   margin-bottom: 1rem;
 }
 
+.mb {
+  margin-bottom: 0.5rem;
+}
+
 hr.new {
   border-top: 2px dashed #ececec;
 }
@@ -62,4 +61,8 @@ hr.new {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
